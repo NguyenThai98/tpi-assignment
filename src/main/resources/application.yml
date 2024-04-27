@@ -38,3 +38,10 @@ clients:
       maxAttempts: 3
       retryableErrors: [ 408, 409, 429, 499, 503, 504 ]
       nonRetryableErrors: [ 400, 401, 403, 404, 500 ]
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /docs/swagger-ui
+  api-docs:
+    enabled: true
+    path: /docs/api-docs

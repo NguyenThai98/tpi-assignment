@@ -18,6 +18,6 @@ public class CoinDeskService {
   public CurrencyDTO getPriceBitcoin() {
     return Optional.ofNullable(coinDeskClient.getPriceBitcoin())
         .map(currencyMapper::toCurrencyDTO)
-        .orElseGet(null);
+        .orElseGet(() -> null);
   }
 }

@@ -1,5 +1,10 @@
 package com.tpi.currency.client.base.exceptions;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ApiException extends NoRetryException {
 
   private String code;
@@ -9,13 +14,5 @@ public class ApiException extends NoRetryException {
     super(message);
     this.code = code;
     this.reason = reason;
-  }
-
-  public String getErrorCode() {
-    return code;
-  }
-
-  public String getReason() {
-    return reason;
   }
 }

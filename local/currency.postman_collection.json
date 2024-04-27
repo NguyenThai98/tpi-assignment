@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "d86be64e-4646-47c0-a2c3-3aa6f4641161",
+		"name": "currency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8737818"
+	},
+	"item": [
+		{
+			"name": "currentprice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.coindesk.com/v1/bpi/currentprice.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"coindesk",
+						"com"
+					],
+					"path": [
+						"v1",
+						"bpi",
+						"currentprice.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "coindesk-wraper-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/currency-service/v1/coin/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency-service",
+						"v1",
+						"coin",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get currency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/currency-service/v1/currencies?currency=&direction=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency-service",
+						"v1",
+						"currencies"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": ""
+						},
+						{
+							"key": "direction",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add currency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"currency\": \"ASC\",\n    \"name\": \"British Pound Sterling\",\n    \"rate\": 50377.4008\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/currency-service/v1/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency-service",
+						"v1",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete currency",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/currency-service/v1/currencies/USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency-service",
+						"v1",
+						"currencies",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update currency",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"currency\": \"ASS\",\n    \"name\": \"United States Dollar\",\n    \"rate\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/currency-service/v1/currencies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"currency-service",
+						"v1",
+						"currencies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

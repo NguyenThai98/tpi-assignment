@@ -31,6 +31,7 @@ public class CurrencyService {
   private final CoinMapper coinMapper;
 
   public List<CoinDTO> getCurrency(String currency, DIRECTION direction) {
+    log.info("Get currency with params: {} - {} ", currency, direction);
     final Specification<Coin> specification =
         (root, query, builder) -> builder.and(resolveCurrency(currency, root, builder));
     return coinRepository.findAll(specification, resolveDirection(direction)).stream()
@@ -70,7 +71,7 @@ public class CurrencyService {
     Optional.of(getCoinByCurrency(currency)).ifPresent(coinRepository::delete);
   }
 
-  private Coin getCoinByCurrency(String currency) {
+  public Coin getCoinByCurrency(String currency) {
     return coinRepository
         .findByCode(currency)
         .orElseThrow(
@@ -80,7 +81,7 @@ public class CurrencyService {
                     format("Record does not exists: %s", currency)));
   }
 
-  private boolean isExistsCurrency(String currency) {
+  public boolean isExistsCurrency(String currency) {
     return coinRepository.findByCode(currency).map(coin -> Boolean.TRUE).orElse(Boolean.FALSE);
   }
 }

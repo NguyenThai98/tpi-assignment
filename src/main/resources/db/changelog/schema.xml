@@ -4,4 +4,5 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd"
 >
     <include file="db/changelog/create/create-table-coin.xml"/>
+    <include file="db/changelog/create/create-table-sheld-lock.xml"/>
 </databaseChangeLog>

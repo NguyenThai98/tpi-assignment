@@ -9,7 +9,6 @@ import com.tpi.currency.client.coindesk.CoinDeskConfig;
 import feign.Feign;
 import feign.Logger;
 import feign.Request;
-import feign.RequestTemplate;
 import feign.Retryer;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -27,11 +26,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Log4j2
 public class FeignClientConfiguration {
-  @Bean
-  Logger.Level feignLoggerLevel() {
-    return Logger.Level.FULL;
-  }
-
   @Bean
   public CoinDeskClient getCoinDeskClient(CoinDeskConfig clientConfig, ObjectMapper objectMapper) {
     return getFeignClient(
@@ -85,11 +79,5 @@ public class FeignClientConfiguration {
         });
 
     return feignBuilder.target(clazz, apiConfig.getUrl());
-  }
-
-  private void logRequest(RequestTemplate template) {
-    log.info("Out-coming request to other service: {} {}", template.method(), template.url());
-    log.debug("Headers: [{}]", template.headers());
-    log.debug("Query Params: [{}]", template.queries());
   }
 }

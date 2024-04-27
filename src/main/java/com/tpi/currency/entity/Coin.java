@@ -21,6 +21,7 @@ public class Coin {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private LocalDateTime updated;
   private String disclaimer;
   private String chartName;

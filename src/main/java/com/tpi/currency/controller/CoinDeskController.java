@@ -16,7 +16,7 @@ public class CoinDeskController {
   private final CoinDeskService coinDeskService;
 
   @GetMapping("/price")
-  public ResultMessage<CurrencyDTO> priceBitcoin() {
+  public ResultMessage<CurrencyDTO> getPriceBitcoin() {
     return ResultUtil.data(coinDeskService.getPriceBitcoin());
   }
 }

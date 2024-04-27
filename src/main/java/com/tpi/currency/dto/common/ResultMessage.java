@@ -1,6 +1,8 @@
 package com.tpi.currency.dto.common;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import lombok.Data;
 
 @Data
@@ -10,6 +12,6 @@ public class ResultMessage<T> implements Serializable {
   private boolean success;
   private String message;
   private Integer code;
-  private long timestamp = System.currentTimeMillis();
+  private LocalDateTime timestamp = LocalDateTime.now(ZoneId.of("Asia/Ho_Chi_Minh"));
   private T result;
 }

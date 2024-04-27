@@ -5,9 +5,11 @@ import com.tpi.currency.dto.currency.TimeUpdateCurrencyDTO;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class CurrencyDataResponse {
   private TimeUpdateCurrencyDTO time;
   private String disclaimer;

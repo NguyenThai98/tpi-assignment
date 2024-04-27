@@ -7,4 +7,4 @@ public record Currency(
     String symbol,
     String rate,
     String description,
-    @JsonProperty("rate_float") double rateFloat) {}
+    @JsonProperty("rate_float") Float rateFloat) {}

@@ -31,6 +31,7 @@ public interface CurrencyMapper {
   @Mapping(target = "currency", source = "code")
   @Mapping(target = "name", source = "description")
   @Mapping(target = "rate", source = "rate")
+  @Mapping(target = "rateFloat", source = "rateFloat")
   CoinDTO toCoinDTO(Currency currency);
 
   @Named("extractToCurrencies")
