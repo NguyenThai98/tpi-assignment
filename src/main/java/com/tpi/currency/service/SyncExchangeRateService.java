@@ -35,7 +35,7 @@ public class SyncExchangeRateService {
                   .forEach(
                       coinDTO -> {
                         try {
-                          upsertCoin(coinDTO);
+                          updateCoin(coinDTO);
                         } catch (ClientException exception) {
                           addNewCoin(coinDTO);
                         }
@@ -52,7 +52,7 @@ public class SyncExchangeRateService {
         new AddCurrencyDTO(coinDTO.currency(), coinDTO.name(), coinDTO.rateFloat()));
   }
 
-  private void upsertCoin(CoinDTO coinDTO) {
+  private void updateCoin(CoinDTO coinDTO) {
     Optional.ofNullable(currencyService.getCoinByCurrency(coinDTO.currency()))
         .ifPresent(
             coin -> {
