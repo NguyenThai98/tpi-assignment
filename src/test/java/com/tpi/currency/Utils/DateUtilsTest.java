@@ -17,7 +17,7 @@ public class DateUtilsTest {
 
     @Test
     public void Test_date_format_mmmm_dd_yyyy_string() {
-        DateUtils.convertCoinDeskFormatTime("May 3, 2024 02:46:38 UTC",DateUtils.COINDESK_FORMAT_TIME);
+        DateUtils.convertCoinDeskFormatTime("May 13, 2024 02:46:38 UTC",DateUtils.COINDESK_FORMAT_TIME);
     }
 
 
